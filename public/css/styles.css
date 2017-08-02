@@ -1,0 +1,171 @@
+@import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
+
+@import '_mixins';
+
+$font-stack: "Arial", sans-serif;
+$main-white: #ffffff;
+$main-black: #222;
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol, ul, li,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+  margin: 0;
+  padding: 0;
+  font: inherit;
+  font-size: 100%;
+  vertical-align: baseline;
+}
+
+html, body {
+  width: 100%;
+  font-family: $font-stack;
+  font-weight: 400;
+  color: $main-black;
+  overflow-x: hidden;
+
+  &.is-active {
+    overflow: hidden;
+  }
+}
+
+.wrapper {
+  width: 100%;
+}
+
+.flex-display {
+  display: flex;
+
+  &.position-center {
+    align-items: center;
+    justify-content: center;
+  }
+
+  &.space-around {
+    align-items: center;
+    justify-content: space-around;
+  }
+
+  &.direction-column {
+    flex-direction: column;
+  }
+}
+
+span.br {
+  content: ' ';
+  display: block;
+}
+
+span.br-mobile {
+  content: ' ';
+  display: inline-block;
+  margin: 0 3px;
+}
+
+@media (max-width: 768px) {
+  span.br {
+    display: inline-block;
+    margin: 0 5px;
+  }
+
+  span.br-mobile {
+    content: ' ';
+    display: block;
+  }
+}
+
+@media (min-width: 768px) {
+  .row-eq-height.sm-fix {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+  }
+}
+
+@media (min-width: 992px) {
+  .row-eq-height.md-fix {
+    display: -webkit-box;
+    display: -webkit-flex;
+    display: -ms-flexbox;
+    display:         flex;
+  }
+}
+
+/**
+ * Text styles
+ */
+
+h1 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  transition: .2s all;
+}
+
+h2 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+h3 {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+p {
+  font-size: 14px;
+  letter-spacing: 1px;
+  font-weight: 300;
+  line-height: 150%;
+}
+
+/**
+ * Button styles
+ */
+
+a.button {
+  display: inline-block;
+  text-transform: uppercase;
+  text-decoration: none;
+  text-align: center;
+  padding: 15px 20px;
+  border: 1px solid transparent;
+  border-radius: 4px;
+  transition: .2s all ease;
+
+  &.button-grey {
+    background-color: #eee;
+    color: $main-black;
+    border-color: #eee;
+  }
+}
+
+/**
+ * Image/Icon styles
+ */
+
+figure {
+  img {
+    width: 100%;
+  }
+}
+
+/**
+ * Section Styles
+ */
+section.section {
+  position: relative;
+}
