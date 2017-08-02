@@ -64,6 +64,8 @@ function configFactory() {
         path: path.resolve(appRootDir.get(), './build'),
       }),
 
+      new webpack.optimize.ModuleConcatenationPlugin(),
+
       ifDev(() => new webpack.NoEmitOnErrorsPlugin()),
 
       ifDev(() => new webpack.HotModuleReplacementPlugin()),
