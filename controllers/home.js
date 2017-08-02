@@ -1,5 +1,8 @@
-exports.index = (req, res) => {
-  res.render('home', {
-    title: 'Home'
+const path = require('path');
+const appRootDir = require('app-root-dir');
+
+exports.index = (req, res, assetsMap) => {
+  res.render(path.resolve(appRootDir.get(), './views/home.html'), {
+    assetsMap: assetsMap,
   });
 };
