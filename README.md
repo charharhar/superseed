@@ -2,21 +2,21 @@
 <p align="center">Bare minimum, production ready express web application.</p>
 
 ## About
-A very productive, hot reloading development environment that is production ready. Does not utilize any frameworks, just barebones HTML/SCSS/ES6 as the primary goal. The goal is to get up and running as quickly as possible without worrying about the boilerplate application configurations.
+A very productive, hot reloading development environment that is production ready. Does not utilize any frameworks, just barebones HTML + SCSS + ES6. The goal is to get up and running as quickly as possible without worrying about the fundamental application configurations.
 
 ## Features
 <dl>
   <dt>Webpack</dt>
-  <dd>Utilizes webpack as the primary code bundler for optimizing the front end assets.</dd>
+  <dd>Utilizes webpack as the primary bundler for optimizing the front end assets.</dd>
 
-  <dt>SCSS support</dt>
+  <dt>SCSS/SASS support</dt>
   <dd>Allows SCSS syntax goodies and autoprefixing with postcss configurations.</dd>
 
   <dt>Hot reloading development environment</dt>
-  <dd>Implements webpack hot middleware in the development express server to take advantage of hot reloading in the client.</dd>
+  <dd>Implements webpack hot middleware in the development node server to take advantage of hot reloading of assets in the client.</dd>
   
   <dt>Simple express server</dt>
-  <dd>Sets up a simple express server that follows an MVC structure, with controllers serving the proper views with their corresponding assets to the route.</dd>
+  <dd>Sets up a simple express server that follows a VC structure, with controllers serving the proper views using EJS templating engine to include their corresponding assets.</dd>
 
   <dt>SEO support</dt>
   <dd>Strong support of SEO meta tag management to be indexed by google's search engine.</dd>
