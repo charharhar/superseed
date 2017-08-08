@@ -40,9 +40,13 @@ function configFactory() {
     },
 
     entry: {
-      main: removeEmpty([
+      home: removeEmpty([
         ifDev('webpack-hot-middleware/client'),
-        path.resolve(appRootDir.get(), './public/js/index')
+        path.resolve(appRootDir.get(), './public/js/home')
+      ]),
+      about: removeEmpty([
+        ifDev('webpack-hot-middleware/client'),
+        path.resolve(appRootDir.get(), './public/js/about')
       ]),
     },
 

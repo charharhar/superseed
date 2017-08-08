@@ -27,6 +27,7 @@ dotenv.load({ path: '.env.example' });
  * Controllers (route handlers).
  */
 const homeController = require('./controllers/home');
+const aboutController = require('./controllers/about');
 
 /**
  * Create Express server.
@@ -75,8 +76,12 @@ const assetsMap = JSON.parse(fs.readFileSync(assetsFilePath, 'utf8'));
 /**
  * Primary app routes.
  */
-app.get('*', (req, res) => {
+app.get('/', (req, res) => {
   homeController.index(req, res, assetsMap);
+});
+
+app.get('/about', (req, res) => {
+  aboutController.index(req, res, assetsMap);
 });
 
 /**

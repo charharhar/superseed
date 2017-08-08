@@ -1,17 +1,19 @@
 
-import '../css/styles.css';
-
 /**
  * Utility Functions
  */
 
-function removeAllChildren(parent) {
+export function hotReload() {
+  return (process.env.NODE_ENV === 'development') && module.hot && module.hot.accept();
+}
+
+export function removeAllChildren(parent) {
   while (parent.hasChildNodes()) {
     parent.removeChild(parent.lastChild);
   }
 }
 
-function findParent(node, className) {
+export function findParent(node, className) {
   let tempNode = node;
 
   while (!tempNode.classList.contains(className)) {
@@ -21,22 +23,22 @@ function findParent(node, className) {
   return tempNode
 }
 
-function sliceArray(nodeArray) {
+export function sliceArray(nodeArray) {
   return Array.prototype.slice.call(nodeArray)
 }
 
-function getDistanceFromLeft(el) {
+export function getDistanceFromLeft(el) {
   const rect = el.getBoundingClientRect();
   const docEl = document.documentElement;
 
   return (rect.left + (window.pageXOffset || docEl.scrollLeft || 0))
 }
 
-function scrollTop() {
+export function scrollTop() {
   return (window.pageYOffset !== undefined) ? window.pageYOffset : (document.documentElement || document.body.parentNode || document.body).scrollTop;
 }
 
-function scrollTo(e, elem) {
+export function scrollTo(e, elem) {
   e.preventDefault();
 
   const target = `.${elem.getAttribute('scrollTo')}`
@@ -45,7 +47,3 @@ function scrollTo(e, elem) {
     scrollTop: $(target).offset().top
   }, 1000);
 }
-
-window.addEventListener('load', function(e) {
-  console.log('--> Application started')
-})
