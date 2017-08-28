@@ -1,7 +1,11 @@
+@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
-$font-stack: "Arial", sans-serif;
-$main-white: #ffffff;
+$font-stack: "Montserrat", "Arial", sans-serif;
+$main-yellow: #f9cd53;
+$main-orange: #f3a51b;
+$main-teal: #44a4b1;
+$main-white: #fff;
 $main-black: #222;
 
 *, *:before, *:after {
@@ -41,6 +45,7 @@ html, body {
 }
 
 .wrapper {
+  position: relative;
   width: 100%;
 }
 
@@ -125,9 +130,9 @@ h3 {
 
 p {
   font-size: 14px;
-  letter-spacing: 1px;
+  letter-spacing: .5px;
   font-weight: 300;
-  line-height: 150%;
+  line-height: 130%;
 }
 
 /**
@@ -158,12 +163,126 @@ a.button {
 figure {
   img {
     width: 100%;
+    vertical-align: bottom;
   }
 }
 
 /**
  * Section Styles
  */
+
+.wrapper {
+  .yellowBar {
+    position: absolute;
+    height: calc(100% - 200px);
+    width: 25%;
+    background-color: $main-yellow;
+    transition: 2000ms all cubic-bezier(0.455, 0.03, 0.515, 0.955);
+    // transform: translateY(-100%);
+  }
+
+  section.section,
+  footer.footer {
+    padding-left: 25%;
+  }
+}
+
 section.section {
   position: relative;
+
+  .main-heading {
+    position: absolute;
+    top: 40%;
+    left: 12.5%;
+    transform: translate(-50%, -50%);
+    color: $main-white;
+
+    h1 {
+      letter-spacing: 2.2px;
+      font-size: 36px;
+    }
+  }
+
+  .section-words {
+    color: $main-black;
+    margin: 0 auto 40px;
+    width: 80%;
+
+    h1 {
+      font-size: 24px;
+      font-weight: 600;
+      margin-bottom: 15px;
+    }
+
+    p {
+      font-weight: 300;
+    }
+  }
+}
+
+section.section-home-main {
+  height: 100vh;
+}
+
+section.section-home-about {
+  padding: 40px 0;
+}
+
+section.section-home-clients {
+  background-color: $main-orange;
+
+  .clients-container {
+    background-color: $main-yellow;
+    height: 100%;
+    padding: 40px;
+  }
+}
+
+section.section-home-contact {
+  &:before {
+    content: '';
+    display: block;
+    top: 0;
+    left: 0;
+    width: 100%;
+    padding-top: 29.4%;
+  }
+
+  .chat-image-container {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+  }
+}
+
+footer.footer {
+  position: relative;
+  border-top: 5px solid $main-teal;
+  height: 200px;
+  background-color: $main-white;
+
+  .footer-contents {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-flow: column wrap;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+
+    .footer-img {
+      max-width: 250px;
+      margin-bottom: 30px;
+    }
+
+    .footer-copy {
+      color: $main-black;
+      font-weight: bold;
+      text-transform: uppercase;
+      font-size: 13px;
+    }
+  }
 }
