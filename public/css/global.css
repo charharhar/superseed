@@ -1,9 +1,9 @@
-@import url(https://fonts.googleapis.com/css?family=Montserrat:300,400,600);
+@import url(https://fonts.googleapis.com/css?family=Montserrat:100,300,400,600);
 @import url(https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css);
 
 $font-stack: "Montserrat", "Arial", sans-serif;
 $main-yellow: #f9cd53;
-$main-orange: #f3a51b;
+$main-blue: #294a60;
 $main-teal: #44a4b1;
 $main-white: #fff;
 $main-black: #222;
@@ -177,125 +177,131 @@ figure {
 }
 
 .orangeBg {
-  background-color: $main-orange;
+  background-color: $main-blue;
 }
 
 section.section {
   position: relative;
-  display: flex;
-  flex-flow: row wrap;
+  height: 100vh;
+  border-top: 1px solid black;
+  border-bottom: 1px solid black;
 
-  .sideBar {
-    position: relative;
-    width: 25%;
+  &.section-flex {
     display: flex;
-    align-items: center;
-    justify-content: center;
-
-    .main-heading {
-      margin-top: -60px;
-
-      h1 {
-        color: $main-white;
-        letter-spacing: 2.2px;
-        font-size: 48px;
-      }
-    }
   }
 
   .mainContainer {
     position: relative;
     background-color: $main-white;
-    width: 75%;
-    padding: 40px;
+    width: 100%;
+    display: flex;
 
     &.yellowBg {
       background-color: $main-yellow;
     }
 
+    &.splitSection {
+      .main-heading {
+        display: flex;
+        flex: 1 0 25%;
+        justify-content: center;
+      }
+
+      .main-words {
+        display: flex;
+        flex-flow: row wrap;
+        flex: 1 0 75%;
+      }
+    }
+
+    .main-heading {
+      h1 {
+        color: $main-blue;
+        letter-spacing: 2.2px;
+        font-size: 48px;
+        line-height: 1.4;
+      }
+    }
+
     .section-words {
       color: $main-black;
-      margin: 0 auto 40px;
-      width: 75%;
+      margin: 0 auto;
 
       h1 {
         font-size: 24px;
         font-weight: 600;
         margin-bottom: 15px;
+        color: $main-yellow;
       }
 
       p {
         font-weight: 300;
+        color: $main-blue;
       }
     }
   }
 }
 
 section.section-home-main {
-  height: 100vh;
-
-  .seeds-container {
-    position: absolute;
-    left: 0;
-    bottom: -5%;
-    width: 100%;
-    background-image: url(/images/main/pattern-semi.png);
-    background-repeat: repeat-x;
-    background-size: 100% 100%;
-    z-index: 1;
-    transition: 500ms all cubic-bezier(.25, .1, .25, 1);
-
-    &:before {
-      content: '';
-      display: block;
-      width: 100%;
-      padding-top: 14.7%
-    }
+  &.section-flex {
+    flex-flow: row wrap;
+    align-items: center;
+    justify-content: center;
   }
 
+  .mainContainer {
+    flex-flow: column wrap;
+
+    .logo-container {
+      width: 80%;
+      .logo-image {
+        max-width: 700px;
+        margin: 0 auto;
+      }
+    }
+
+    h1 {
+      margin-top: 80px;
+      color: $main-blue;
+      font-weight: 100;
+      font-size: 26px;
+    }
+  }
 }
 
 section.section-home-about {
+  &.section-flex {
+    flex-flow: row wrap;
+    align-items: center;
+  }
+
   .mainContainer {
-    padding: 100px 0 50px;
+    flex-flow: row wrap;
+
+    .section-words {
+      width: 80%;
+      margin-bottom: 60px;
+    }
   }
 }
 
 section.section-home-clients {
 
-  .clients-container {
-    height: 100%;
-    padding: 40px;
-  }
 }
 
 section.section-home-contact {
-
-  .chat-image-container {
-    position: absolute;
-    width: 100%;
-    height: 100%;
-    top: 0;
-    left: 0;
-    z-index: 1;
-
-    figure {
-      height: 100%;
-
-      img {
-        height: 100%;
-      }
-    }
+  &.section-flex {
+    flex-flow: row wrap;
+    align-items: center;
   }
 
   .mainContainer {
-    padding-top: 31.25%;
   }
 }
 
 footer.footer {
   position: relative;
-  border-top: 5px solid $main-teal;
+  border-top: 5px solid $main-yellow;
   width: 100%;
   height: 200px;
   background-color: $main-white;
