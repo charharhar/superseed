@@ -47,6 +47,7 @@ html, body {
 .wrapper {
   position: relative;
   width: 100%;
+  overflow: hidden;
 }
 
 .flex-display {
@@ -171,94 +172,131 @@ figure {
  * Section Styles
  */
 
-.wrapper {
-  .yellowBar {
-    position: absolute;
-    height: calc(100% - 200px);
-    width: 25%;
-    background-color: $main-yellow;
-    transition: 2000ms all cubic-bezier(0.455, 0.03, 0.515, 0.955);
-    // transform: translateY(-100%);
-  }
+.yellowBg {
+  background-color: $main-yellow;
+}
 
-  section.section,
-  footer.footer {
-    padding-left: 25%;
-  }
+.orangeBg {
+  background-color: $main-orange;
 }
 
 section.section {
   position: relative;
+  display: flex;
+  flex-flow: row wrap;
 
-  .main-heading {
-    position: absolute;
-    top: 40%;
-    left: 12.5%;
-    transform: translate(-50%, -50%);
-    color: $main-white;
+  .sideBar {
+    position: relative;
+    width: 25%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    h1 {
-      letter-spacing: 2.2px;
-      font-size: 36px;
+    .main-heading {
+      margin-top: -60px;
+
+      h1 {
+        color: $main-white;
+        letter-spacing: 2.2px;
+        font-size: 48px;
+      }
     }
   }
 
-  .section-words {
-    color: $main-black;
-    margin: 0 auto 40px;
-    width: 80%;
+  .mainContainer {
+    position: relative;
+    background-color: $main-white;
+    width: 75%;
+    padding: 40px;
 
-    h1 {
-      font-size: 24px;
-      font-weight: 600;
-      margin-bottom: 15px;
+    &.yellowBg {
+      background-color: $main-yellow;
     }
 
-    p {
-      font-weight: 300;
+    .section-words {
+      color: $main-black;
+      margin: 0 auto 40px;
+      width: 75%;
+
+      h1 {
+        font-size: 24px;
+        font-weight: 600;
+        margin-bottom: 15px;
+      }
+
+      p {
+        font-weight: 300;
+      }
     }
   }
 }
 
 section.section-home-main {
   height: 100vh;
+
+  .seeds-container {
+    position: absolute;
+    left: 0;
+    bottom: -5%;
+    width: 100%;
+    background-image: url(/images/main/pattern-semi.png);
+    background-repeat: repeat-x;
+    background-size: 100% 100%;
+    z-index: 1;
+    transition: 500ms all cubic-bezier(.25, .1, .25, 1);
+
+    &:before {
+      content: '';
+      display: block;
+      width: 100%;
+      padding-top: 14.7%
+    }
+  }
+
 }
 
 section.section-home-about {
-  padding: 40px 0;
+  .mainContainer {
+    padding: 100px 0 50px;
+  }
 }
 
 section.section-home-clients {
-  background-color: $main-orange;
 
   .clients-container {
-    background-color: $main-yellow;
     height: 100%;
     padding: 40px;
   }
 }
 
 section.section-home-contact {
-  &:before {
-    content: '';
-    display: block;
-    top: 0;
-    left: 0;
-    width: 100%;
-    padding-top: 29.4%;
-  }
 
   .chat-image-container {
     position: absolute;
     width: 100%;
+    height: 100%;
     top: 0;
     left: 0;
+    z-index: 1;
+
+    figure {
+      height: 100%;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+
+  .mainContainer {
+    padding-top: 31.25%;
   }
 }
 
 footer.footer {
   position: relative;
   border-top: 5px solid $main-teal;
+  width: 100%;
   height: 200px;
   background-color: $main-white;
 
@@ -280,7 +318,7 @@ footer.footer {
 
     .footer-copy {
       color: $main-black;
-      font-weight: bold;
+      font-weight: 400;
       text-transform: uppercase;
       font-size: 13px;
     }
