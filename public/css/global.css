@@ -47,7 +47,6 @@ html, body {
 .wrapper {
   position: relative;
   width: 100%;
-  overflow: hidden;
 }
 
 .flex-display {
@@ -172,33 +171,146 @@ figure {
  * Section Styles
  */
 
-.yellowBg {
-  background-color: $main-yellow;
-}
-
-.orangeBg {
-  background-color: $main-blue;
-}
-
 section.section {
   position: relative;
   height: 100vh;
-  border-top: 1px solid black;
-  border-bottom: 1px solid black;
 
-  &.section-flex {
-    display: flex;
+  &.yellowBg {
+    background-color: $main-yellow;
+  }
+
+  .pattern-container {
+    position: absolute;
+    width: 140%;
+    left: 0;
+    right: 0;
+    z-index: 10;
+
+    figure,
+    figure img {
+      height: 100%;
+    }
+
+    &.animate {
+      &#patternOne {
+        .border-imgs {
+          transform: translateY(0);
+        }
+      }
+
+      &#patternTwo {
+        .full-imgs {
+          transform: translateY(50%);
+        }
+      }
+
+      &#patternThree {
+        .full-imgs {
+          transform: translateY(50%);
+        }
+      }
+
+      &#patternFour {
+        .border-imgs {
+          transform: translateY(0);
+        }
+      }
+    }
+
+    &#patternOne {
+      top: 0;
+
+      .border-imgs {
+        transform: translateY(-100%);
+
+        &.border-seeds-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: 400ms all ease;
+          transition-delay: 400ms;
+        }
+
+        &.border-lines-img {
+          transition: 800ms all ease;
+        }
+      }
+    }
+
+    &#patternTwo {
+      bottom: 0;
+
+      .full-imgs {
+        transform: translateY(150%);
+
+        &.full-seeds-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: 400ms all ease;
+          transition-delay: 400ms;
+        }
+
+        &.full-lines-img {
+          transition: 800ms all ease;
+        }
+      }
+    }
+
+    &#patternThree {
+      bottom: 0;
+
+      .full-imgs {
+        transform: translateY(150%);
+
+        &.full-seeds-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: 400ms all ease;
+          transition-delay: 400ms;
+        }
+
+        &.full-lines-img {
+          transition: 800ms all ease;
+        }
+      }
+    }
+
+    &#patternFour {
+      bottom: 0;
+
+      .border-imgs {
+        transform: translateY(150%);
+
+        img {
+          transform: rotate(180deg);
+        }
+
+        &.border-seeds-img {
+          position: absolute;
+          top: 0;
+          left: 0;
+          width: 100%;
+          transition: 400ms all ease;
+          transition-delay: 400ms;
+        }
+
+        &.border-lines-img {
+          transition: 800ms all ease;
+        }
+      }
+    }
+
   }
 
   .mainContainer {
     position: relative;
-    background-color: $main-white;
     width: 100%;
     display: flex;
-
-    &.yellowBg {
-      background-color: $main-yellow;
-    }
 
     &.splitSection {
       .main-heading {
@@ -219,7 +331,6 @@ section.section {
         color: $main-blue;
         letter-spacing: 2.2px;
         font-size: 48px;
-        line-height: 1.4;
       }
     }
 
@@ -251,6 +362,7 @@ section.section-home-main {
 
   .mainContainer {
     flex-flow: column wrap;
+    align-items: center;
 
     .logo-container {
       width: 80%;
@@ -280,13 +392,40 @@ section.section-home-about {
 
     .section-words {
       width: 80%;
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
   }
 }
 
 section.section-home-clients {
+  &.section-flex {
 
+  }
+
+  .mainContainer {
+    align-items: center;
+    justify-content: center;
+
+
+    .clients-container {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-flow: row wrap;
+
+      .main-heading {
+        margin-bottom: 60px;
+        h1 {
+          color: $main-white;
+        }
+      }
+
+      .clients-img {
+        width: 75%;
+        margin: 0 auto;
+      }
+    }
+  }
 }
 
 section.section-home-contact {
@@ -300,7 +439,10 @@ section.section-home-contact {
 }
 
 footer.footer {
-  position: relative;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 0;
   border-top: 5px solid $main-yellow;
   width: 100%;
   height: 200px;

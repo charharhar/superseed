@@ -5,16 +5,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Home route</title>
 
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.9.4/jquery.fullpage.min.css">
     <link rel="stylesheet" href="<%= assetsMap.home.css %>">
 </head>
 <body>
 
-    <div class="wrapper">
-        <section class="section section-home-main section-flex">
+    <div class="wrapper" id="fullpage">
+        <section class="section section-home-main">
+            <div class="pattern-container border-pattern" id="patternOne">
+                <figure class="border-imgs border-seeds-img">
+                    <img src="/images/main/border-seeds.svg" alt="">
+                </figure>
+                <figure class="border-imgs border-lines-img">
+                    <img src="/images/main/border-lines.svg" alt="">
+                </figure>
+            </div>
+
+            <div class="pattern-container full-pattern" id="patternTwo">
+                <figure class="full-imgs full-seeds-img">
+                    <img src="/images/main/full-seeds.svg" alt="">
+                </figure>
+                <figure class="full-imgs full-lines-img">
+                    <img src="/images/main/full-lines.svg" alt="">
+                </figure>
+            </div>
+
             <div class="mainContainer">
                 <div class="logo-container">
                     <figure class="logo-image">
-                        <img src="/images/main/logo-large.png" alt="">
+                        <img src="/images/main/logo-large.svg" alt="">
                     </figure>
                 </div>
 
@@ -22,7 +41,16 @@
             </div>
         </section>
 
-        <section class="section section-home-about section-flex">
+        <section class="section section-home-about">
+            <div class="pattern-container full-pattern" id="patternThree">
+                <figure class="full-imgs full-seeds-img">
+                    <img src="/images/main/full-seeds.svg" alt="">
+                </figure>
+                <figure class="full-imgs full-lines-img">
+                    <img src="/images/main/full-lines.svg" alt="">
+                </figure>
+            </div>
+
             <div class="mainContainer splitSection">
                 <div class="main-heading">
                     <h1>who<br>we<br>are</h1>
@@ -42,10 +70,29 @@
             </div>
         </section>
 
-        <section class="section section-home-clients">
+        <section class="section section-home-clients yellowBg">
+            <div class="pattern-container border-pattern" id="patternFour">
+                <figure class="border-imgs border-seeds-img">
+                    <img src="/images/main/border-seeds.svg" alt="">
+                </figure>
+                <figure class="border-imgs border-lines-img">
+                    <img src="/images/main/border-lines.svg" alt="">
+                </figure>
+            </div>
+
+            <div class="mainContainer">
+                <div class="clients-container">
+                    <div class="main-heading">
+                        <h1>our clients</h1>
+                    </div>
+                    <figure class="clients-img">
+                        <img src="/images/main/client-logos.png" alt="">
+                    </figure>
+                </div>
+            </div>
         </section>
 
-        <section class="section section-home-contact section-flex">
+        <section class="section section-home-contact">
             <div class="mainContainer splitSection">
                 <div class="main-heading">
                     <h1>let's<br>have a<br>chat</h1>
@@ -57,22 +104,26 @@
                     </div>
                 </div>
             </div>
+
+            <footer class="footer">
+                <div class="footer-contents">
+                    <figure class="footer-img">
+                        <img src="/images/main/logo-large.svg" alt="">
+                    </figure>
+                    <p class="footer-copy">superseed limited all rights reserved.</p>
+                </div>
+            </footer>
         </section>
 
-        <footer class="footer">
-            <div class="footer-contents">
-                <figure class="footer-img">
-                    <img src="/images/main/logo-large.png" alt="">
-                </figure>
-                <p class="footer-copy">superseed limited all rights reserved.</p>
-            </div>
-        </footer>
     </div>
 
     <script
         src="https://code.jquery.com/jquery-3.2.1.min.js"
         integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4="
         crossorigin="anonymous"></script>
+    <script
+        src="https://cdn.jsdelivr.net/jquery.fullpage/2.9.4/jquery.fullpage.min.js"
+        integrity="sha256-r80qU2FgO31x7HtK2BQxYOQxPb45x+eKKhzA0OrepyM=" crossorigin="anonymous"></script>
     <script src="<%= assetsMap.home.js %>"></script>
 </body>
 </html>
