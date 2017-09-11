@@ -462,6 +462,7 @@ section.section-home-main {
 
       &.animate {
         transform: translateY(0);
+        opacity: 1;
       }
     }
   }
