@@ -425,7 +425,9 @@ section.section {
 }
 
 .easingClass {
-  transition: transform 1000ms cubic-bezier(0.16, 0.68, 0.43, 0.99), opacity 700ms ease-in-out;
+  transition-timing-function: cubic-bezier(0.16, 0.68, 0.43, 0.99);
+  transition-duration: 1000ms;
+  transition-property: all;
   transition-delay: 500ms;
 }
 
@@ -506,12 +508,12 @@ section.section-home-about {
 
       &:nth-of-type(1) {
         transform: translateX(100px);
-        transition-delay: 650ms;
+        transition-delay: 700ms;
       }
 
       &:nth-of-type(2) {
         transform: translateX(100px);
-        transition-delay: 800ms;
+        transition-delay: 900ms;
       }
     }
   }
@@ -582,7 +584,7 @@ section.section-home-clients {
       display: flex;
       align-items: center;
       justify-content: center;
-      flex-flow: row wrap;
+      flex-flow: column wrap;
 
       .main-heading {
         margin-bottom: 60px;
@@ -599,7 +601,7 @@ section.section-home-clients {
         margin: 0 auto;
         opacity: 0;
         transform: translateY(100px);
-        transition-delay: 650ms;
+        transition-delay: 700ms;
       }
     }
 
@@ -629,7 +631,7 @@ section.section-home-contact {
       flex: 1 0 40%;
       transform: translateX(-100px);
       opacity: 0;
-      transition-delay: 650ms;
+      transition-delay: 700ms;
     }
 
     .main-words {
@@ -641,7 +643,7 @@ section.section-home-contact {
         margin-left: 0;
         opacity: 0;
         transform: translateX(100px);
-        transition-delay: 800ms;
+        transition-delay: 900ms;
       }
     }
   }
@@ -663,6 +665,9 @@ section.section-home-contact {
     }
 
     footer.footer {
+      &:before {
+        transform: translateX(-50%) scaleX(1);
+      }
       .contact-button {
         .contact-text {
           opacity: 1;
@@ -718,10 +723,22 @@ footer.footer {
   left: 0;
   right: 0;
   bottom: 0;
-  border-top: 7px solid $main-yellow;
   width: 100%;
   height: 200px;
   background-color: $main-white;
+
+  &:before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 50%;
+    transform: translateX(-50%) scaleX(0);
+    height: 7px;
+    background-color: $main-yellow;
+    transition: 800ms all ease;
+    transition-delay: 900ms;
+  }
 
   .contact-button {
     position: absolute;
@@ -741,13 +758,14 @@ footer.footer {
       font-size: 18px;
       opacity: 0;
       transform: translateY(50px);
-      transition-delay: 1000ms;
+      transition-delay: 1100ms;
     }
 
     .contact-img {
       transform: translateX(-100%);
       width: 200px;
-      transition-delay: 1000ms;
+      transition-timing-function: cubic-bezier(.68,-.55,.265,1.55);
+      transition-delay: 1200ms;
     }
   }
 
