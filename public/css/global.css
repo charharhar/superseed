@@ -186,6 +186,13 @@ section.section {
   position: relative;
   height: 100vh;
 
+  .fix-container {
+    display: flex;
+    flex-flow: row wrap;
+    height: 100%;
+    width: 100%;
+  }
+
   &.yellowBg {
     background-color: $main-yellow;
   }
@@ -328,14 +335,14 @@ section.section {
 
       .main-heading {
         display: flex;
-        flex: 1 0 25%;
+        flex: 0 1 25%;
         justify-content: center;
       }
 
       .main-words {
         display: flex;
         flex-flow: row wrap;
-        flex: 1 0 67.5%;
+        flex: 0 1 67.5%;
       }
     }
 
@@ -390,6 +397,10 @@ section.section {
 
 @media (max-width: 768px) {
   section.section {
+    .fix-container {
+      display: block;
+    }
+
     .mainContainer {
 
       .main-heading {
@@ -575,6 +586,12 @@ section.section-home-about {
   }
 }
 
+@media (max-width: 768px) {
+  section.section-home-about {
+
+  }
+}
+
 section.section-home-clients {
   .mainContainer {
     align-items: center;
@@ -628,14 +645,14 @@ section.section-home-contact {
     margin-bottom: 200px;
 
     .main-heading {
-      flex: 1 0 40%;
+      flex: 0 1 40%;
       transform: translateX(-100px);
       opacity: 0;
       transition-delay: 700ms;
     }
 
     .main-words {
-      flex: 1 0 60%;
+      flex: 0 1 60%;
 
       .section-words {
         width: 60%;
@@ -796,8 +813,11 @@ footer.footer {
 
 @media (max-width: 768px) {
   footer.footer {
-    border-top: 5px solid $main-yellow;
     height: 170px;
+
+    &:before {
+      height: 4px;
+    }
 
     .contact-button {
       right: 15px;
