@@ -141,7 +141,7 @@ h3 {
 
 p {
   font-size: 14px;
-  letter-spacing: .5px;
+  letter-spacing: 1.3px;
   font-weight: 300;
   line-height: 130%;
 }
@@ -199,7 +199,7 @@ section.section {
 
   .pattern-container {
     position: absolute;
-    width: 140%;
+    width: 110%;
     left: 0;
     right: 0;
     z-index: 10;
@@ -350,7 +350,7 @@ section.section {
       h1 {
         color: $main-blue;
         letter-spacing: 2.2px;
-        font-size: 48px;
+        font-size: 60px;
       }
     }
 
@@ -366,6 +366,7 @@ section.section {
       }
 
       p {
+        font-size: 16px;
         font-weight: 300;
         color: $main-blue;
       }
@@ -382,6 +383,10 @@ section.section {
 
         .main-heading {
           margin-bottom: 40px;
+
+          h1 {
+            font-size: 48px;
+          }
         }
 
         .main-words {
@@ -391,6 +396,9 @@ section.section {
           }
         }
       }
+    }
+    .fix-container {
+      flex-flow: column wrap;
     }
   }
 }
@@ -415,6 +423,10 @@ section.section {
 
         .main-heading {
           margin-bottom: 20px;
+
+          h1 {
+            font-size: 26px;
+          }
         }
 
         .main-words {
@@ -423,6 +435,7 @@ section.section {
 
             h1 {
               font-size: 16px;
+              margin-bottom: 10px;
             }
 
             p {
@@ -507,6 +520,20 @@ section.section-home-main {
 
 section.section-home-about {
   .mainContainer {
+    .fix-container {
+      max-width: 950px;
+      margin: 0 auto;
+
+      .main-heading {
+        flex: 0 1 33.33%;
+      }
+
+      .main-words {
+        flex: 0 1 66.66%;
+      }
+
+    }
+
     .main-heading {
       opacity: 0;
       transform: translateX(-100px);
@@ -588,7 +615,6 @@ section.section-home-about {
 
 @media (max-width: 768px) {
   section.section-home-about {
-
   }
 }
 
@@ -602,6 +628,7 @@ section.section-home-clients {
       align-items: center;
       justify-content: center;
       flex-flow: column wrap;
+      width: 100%;
 
       .main-heading {
         margin-bottom: 60px;
@@ -614,15 +641,26 @@ section.section-home-clients {
       }
 
       .clients-img {
-        width: 75%;
+        width: 100%;
+        padding: 0 20px;
         margin: 0 auto;
         opacity: 0;
         transform: translateY(100px);
         transition-delay: 700ms;
+
+        &.clients-desktop {
+          max-width: 800px;
+          display: block;
+        }
+
+        &.clients-mobile {
+          max-width: 500px;
+          display: none;
+        }
       }
     }
-
   }
+
   &.active {
     .mainContainer {
       .clients-container {
@@ -634,6 +672,25 @@ section.section-home-clients {
         .clients-img {
           opacity: 1;
           transform: translateY(0)
+        }
+      }
+    }
+  }
+}
+
+@media (max-width: 768px) {
+  section.section-home-clients {
+    .mainContainer {
+
+      .clients-container {
+        .clients-img {
+          &.clients-desktop {
+            display: none;
+          }
+
+          &.clients-mobile {
+            display: block;
+          }
         }
       }
     }
@@ -759,12 +816,13 @@ footer.footer {
 
   .contact-button {
     position: absolute;
+    display: block;
     top: 0;
-    right: 50px;
+    right: 100px;
     cursor: pointer;
     overflow: hidden;
     transform: translateY(-100%);
-    margin-top: -30px;
+    margin-top: -100px;
 
     .contact-text {
       position: absolute;
