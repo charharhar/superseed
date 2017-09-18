@@ -6,14 +6,14 @@ const patternOne = document.querySelector('#patternOne');
 const patternTwo = document.querySelector('#patternTwo');
 const patternThree = document.querySelector('#patternThree');
 const patternFour = document.querySelector('#patternFour');
-const logoImage = document.querySelector('.logo-image');
+const logoContainer = document.querySelector('.logo-container');
 const splashHeading = document.querySelector('.splashHeading');
 
 window.addEventListener('load', function(e) {
   console.log('--> Application started  |  Current route: /')
   patternOne.classList.add('animate');
   patternTwo.classList.add('animate');
-  logoImage.classList.add('animate');
+  logoContainer.classList.add('animate');
   splashHeading.classList.add('animate');
 })
 
