@@ -6,6 +6,7 @@ const patternOne = document.querySelector('#patternOne');
 const patternTwo = document.querySelector('#patternTwo');
 const patternThree = document.querySelector('#patternThree');
 const patternFour = document.querySelector('#patternFour');
+const patternFive = document.querySelector('#patternFive');
 const logoContainer = document.querySelector('.logo-container');
 const splashHeading = document.querySelector('.splashHeading');
 
@@ -27,6 +28,8 @@ $(function() {
         patternThree.classList.add('animate');
       } else if (index === 3) {
         patternFour.classList.add('animate');
+      } else if (index === 4) {
+        patternFive.classList.add('animate');
       }
     },
 
