@@ -9,6 +9,7 @@ const patternFour = document.querySelector('#patternFour');
 const patternFive = document.querySelector('#patternFive');
 const logoContainer = document.querySelector('.logo-container');
 const splashHeading = document.querySelector('.splashHeading');
+const splashSubheading = document.querySelector('.splashSubheading');
 
 window.addEventListener('load', function(e) {
   console.log('--> Application started  |  Current route: /')
@@ -16,6 +17,7 @@ window.addEventListener('load', function(e) {
   patternTwo.classList.add('animate');
   logoContainer.classList.add('animate');
   splashHeading.classList.add('animate');
+  splashSubheading.classList.add('animate');
 })
 
 $(function() {
@@ -34,6 +36,10 @@ $(function() {
     },
 
   })
+
+  $("#backTop").click(function () {
+    $.fn.fullpage.moveTo(1);
+  });
 })
 
 hotReload();
