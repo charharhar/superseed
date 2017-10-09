@@ -393,6 +393,10 @@ section.section {
           color: $main-yellow;
           font-size: 64px;
         }
+
+        span.bolded {
+          font-weight: 600;
+        }
       }
     }
 
@@ -419,7 +423,7 @@ section.section {
 
         li {
           color: $main-blue;
-          font-size: 16px;
+          font-size: 14px;
           font-weight: 300;
 
           &:before {
@@ -1030,7 +1034,7 @@ section.section-home-contact {
 
     footer.footer {
       &:before {
-        transform: translateX(-50%) scaleX(1);
+        transform: translateX(-50%);
       }
     }
   }
@@ -1097,7 +1101,7 @@ footer.footer {
     width: 100%;
     top: 0;
     left: 50%;
-    transform: translateX(-50%) scaleX(0);
+    transform: translateX(-150%);
     height: 7px;
     background-color: $main-yellow;
     transition: 800ms all ease;
@@ -1120,12 +1124,31 @@ footer.footer {
       margin-bottom: 30px;
     }
 
-    .footer-copy {
-      color: $main-black;
-      font-weight: 400;
-      text-transform: uppercase;
-      font-size: 13px;
+    .footer-row {
+      position: relative;
+      width: 100%;
+      text-align: center;
+
+      .footer-copy {
+        color: $main-black;
+        font-weight: 400;
+        text-transform: uppercase;
+        font-size: 13px;
+      }
+
+      .footer-icons {
+        position: absolute;
+        top: 50%;
+        left: 10%;
+        transform: translateY(-50%);
+
+        i.fa {
+          color: $main-blue;
+          font-size: 24px;
+        }
+      }
     }
+
   }
 }
 

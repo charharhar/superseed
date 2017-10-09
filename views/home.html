@@ -6,6 +6,7 @@
     <title>Home route</title>
 
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/jquery.fullpage/2.9.4/jquery.fullpage.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="<%= assetsMap.home.css %>">
 </head>
 <body>
@@ -145,7 +146,7 @@
             <div class="mainContainer">
                 <div class="clients-container">
                     <div class="main-heading">
-                        <h1 class="easingClass">our clients</h1>
+                        <h1 class="easingClass">our <span class="bolded">clients</span></h1>
                     </div>
                     <figure class="clients-img clients-desktop easingClass">
                         <img src="/images/main/client-logos-desktop.svg" alt="">
@@ -193,8 +194,16 @@
                     <figure class="footer-img">
                         <img src="/images/main/logo-large.svg" alt="">
                     </figure>
-                    <p class="footer-copy">superseed limited all rights reserved.</p>
+
+                    <div class="footer-row">
+                        <p class="footer-copy">superseed limited all rights reserved.</p>
+
+                        <div class="footer-icons">
+                            <a href=""><i class="fa fa-linkedin-square" aria-hidden="true"></i></a>
+                        </div>
+                    </div>
                 </div>
+
             </footer>
         </section>
 
