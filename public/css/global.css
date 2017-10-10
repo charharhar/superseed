@@ -632,13 +632,18 @@ section.section-home-main {
       }
 
       &.splashSubheading {
-        background-color: $main-yellow;
+        background-color: #fff;
         width: 100%;
         padding: 10px 0;
         font-size: 18px;
-        transform: scaleX(0);
-        opacity: 0;
-        transition-delay: 2800ms;
+        transition-delay: 3200ms;
+
+        span.easingClass {
+          display: block;
+          transform: translateY(100px);
+          opacity: 0;
+          transition-delay: 2800ms;
+        }
       }
 
       &.animate {
@@ -646,7 +651,12 @@ section.section-home-main {
         opacity: 1;
 
         &.splashSubheading {
-          transform: scaleX(1);
+          background-color: $main-yellow;
+
+          span.easingClass {
+            transform: translateY(0);
+            opacity: 1;
+          }
         }
       }
     }
