@@ -632,13 +632,24 @@ section.section-home-main {
       }
 
       &.splashSubheading {
+        position: relative;
         background-color: #fff;
         width: 100%;
         padding: 10px 0;
         font-size: 18px;
-        transition-delay: 3200ms;
 
-        span.easingClass {
+        span.subHeadingBar {
+          position: absolute;
+          width: 100%;
+          height: 100%;
+          background-color: $main-yellow;
+          top: 0;
+          left: 0;
+          transform: translateX(-100%);
+          transition-delay: 3200ms;
+        }
+
+        span.subHeadingText {
           display: block;
           transform: translateY(100px);
           opacity: 0;
@@ -651,9 +662,12 @@ section.section-home-main {
         opacity: 1;
 
         &.splashSubheading {
-          background-color: $main-yellow;
 
-          span.easingClass {
+          span.subHeadingBar {
+            transform: translateX(0);
+          }
+
+          span.subHeadingText {
             transform: translateY(0);
             opacity: 1;
           }
