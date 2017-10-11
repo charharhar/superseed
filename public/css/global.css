@@ -646,14 +646,14 @@ section.section-home-main {
           top: 0;
           left: 0;
           transform: translateX(-100%);
-          transition-delay: 3200ms;
+          transition-delay: 2800ms;
         }
 
         span.subHeadingText {
+          font-weight: 400;
           display: block;
-          transform: translateY(100px);
-          opacity: 0;
-          transition-delay: 2800ms;
+          transform: translateX(-100%);
+          transition-delay: 3200ms;
         }
       }
 
@@ -668,8 +668,7 @@ section.section-home-main {
           }
 
           span.subHeadingText {
-            transform: translateY(0);
-            opacity: 1;
+            transform: translateX(0);
           }
         }
       }
@@ -1163,12 +1162,12 @@ footer.footer {
       .footer-icons {
         position: absolute;
         top: 50%;
-        left: 10%;
+        right: 10%;
         transform: translateY(-50%);
 
         i.fa {
           color: $main-blue;
-          font-size: 24px;
+          font-size: 32px;
         }
       }
     }
